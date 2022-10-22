@@ -2,6 +2,7 @@ from  TFIDF import x_old
 from TFIDF2 import x_to_train
 import numpy as np
 from stemming import book_order
+from download import person_book_id
 np.set_printoptions(suppress=True, threshold=0.00000001)
 
 def square_rooted(x):
@@ -20,6 +21,7 @@ for i in x_old:
     c+=1
     if c==100:
         break
-print(sorted(dic, key=dic.get,reverse=True))
+
 for each in sorted(dic, key=dic.get,reverse=True):
-    print(book_order[each])
+    if book_order[each] not in person_book_id:
+        print(book_order[each])
